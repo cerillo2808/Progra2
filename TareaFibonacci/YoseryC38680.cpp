@@ -6,7 +6,7 @@ int fibonacci(int);
 int main(){
     int numero;
 
-    printf("Ingrese el numero que quiere fibonaccear: ");
+    printf("Ingrese la posicion de fibonacci que quiere ver: ");
 
     cin>>numero;
     
