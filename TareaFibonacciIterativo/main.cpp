@@ -1,9 +1,26 @@
 #include <iostream>
 using namespace std;
 
+//Liqing Yosery Zheng Lu - C38680
+
+/*
+Asegúrse de tener un compilador C++ instalado en su máquina. Para compilar, seleccione el archivo de este código fuente, y siga
+las instrucciones de su compilador para compilarlo y producir un ejecutable. Ejecute el ejecutable.
+Este programa seguirá pidiendo números hasta que el usuario ingrese un número negativo.
+*/
+
 int fibonacci(int posicion);
+int pregunta ();
 
 int main(){
+
+    while (pregunta()==1){
+        continue;
+    }
+
+}
+
+int pregunta(){
 
     int posicion;
 
@@ -11,9 +28,13 @@ int main(){
 
     cin>>posicion;
 
-    cout<<fibonacci(posicion)<<endl;
-    return 0;
-
+    if (posicion>=0){
+        cout<<fibonacci(posicion)<<endl;
+        return 1;
+    } else{
+        cout<<"Ingreso un numero negativo. Hasta luego."<<endl;
+        return 0;
+    }
 }
 
 int fibonacci(int posicion){
@@ -37,7 +58,4 @@ int fibonacci(int posicion){
 
         return resultado;
     }
-
-
-
 }
