@@ -199,7 +199,7 @@ la variable. También es posible devolver tipos const, para que el usuario no pu
 Por supuesto, esto es algo para evitar errores simples: alguien podría simplemente hacer un
 casting del tipo (convertirlo) y con eso se quita la protección provista por el const. Por ejemplo,
 añadan a `print_student` la línea `((struct student*)s)->age = 5;` y corran el programa de nuevo.
-¿El compilador reporta algún error? ¿Qué imprime el programa?
+¿El compilador reporta algún error? ¿Qué imprime el programa? R/ No imprimió ningún error. El programa imprime la edad cambiada.
 
 ## Step 1c: Desreferencia
 La función `malloc` nos devuelve punteros. ¿Pero cómo obtenemos el puntero a algo? Con el

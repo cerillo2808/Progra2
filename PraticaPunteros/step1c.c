@@ -19,9 +19,11 @@ void main() {
     s1->score = 100;
     strcpy(s1->name, "Maria");
 
+    struct student s2 = {"Ana", 25, 100};
+
     printf("Tamaño de s1: %zu\n", sizeof(s1));
     print_student(s1);
     printf("Tamaño de *s1: %zu\n", sizeof(*s1));
     print_student(s1);
-
+    print_student(&s2);
 }
