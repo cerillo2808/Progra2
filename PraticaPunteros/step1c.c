@@ -13,6 +13,12 @@ void print_student(const struct student* s) {
     ((struct student*)s)->age = 5;
 }
 
+void call_wrapper(void (*f)(const struct student*), const struct student* s) {
+    printf("antes\n");
+    f(s);
+    printf("despues\n");
+}
+
 void main() {
     struct student* s1 = malloc(sizeof(struct student));
     s1->age = 20;
@@ -26,4 +32,5 @@ void main() {
     printf("Tamaño de *s1: %zu\n", sizeof(*s1));
     print_student(s1);
     print_student(&s2);
+    call_wrapper(print_student, s1);
 }
