@@ -258,7 +258,7 @@ para confirmar que ya no tienen fugas de memoria.
 
 En `step2.c` en lugar de agregar la función `free` al final del programa vamos a hacer cosas no válidas
 y ver qué sucede. Al final del programa agreguen `s1 = NULL;`. Compilen el programa y córranlo sin Valgrind.
-Luego córranlo con Valgrind. ¿Cambió el error reportado por Valgrind? ¿Porqué no?
+Luego córranlo con Valgrind. ¿Cambió el error reportado por Valgrind? ¿Porqué no? R/ No, el error no fue cambiado porque no se liberó la memoria, sólo se le asignó nulo.
 
 Es posible que Valgrind indique que nuestra fuga de memoria sea "still reachable". ¿Valgrind no sirve? No, no
 es por eso. La respuesta es que el compilador optimiza nuestro programa. Como nadie lee `s1`
@@ -270,7 +270,7 @@ definitivamente perdida.
 
 ## Segmentation fault
 En `step2.c`, muevan la línea `s1 = NULL` para que esté entre los dos `print_student`. Corran el programa
-tanto sin Valgrind como con Valgrind y reporten los resultados.
+tanto sin Valgrind como con Valgrind y reporten los resultados. R/ Sin Valgrind, sólo me imprime el s1 y termina después de ponerme 'Segmentation fault (core dumped)'. Con Valgrind, me dice que tengo los bytes definitivamente perdidos y que tengo 1 error de un contexto.
 
 Acceder a posiciones de memoria inválida produce lo que se conoce como _segmentation fault_. Esto no sucede
 solamente cuando accedemos a un puntero nulo, sino cuando accedemos a cualquier posición de memoria que no
