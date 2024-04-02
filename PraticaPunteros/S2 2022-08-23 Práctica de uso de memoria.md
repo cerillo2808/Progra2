@@ -316,7 +316,7 @@ después de eso? ¿Porqué? ¿Qué reporta Valgrind? R/ el programa corre, pero 
 
 También existe otra herramienta, integrada en los compiladores GCC y Clang que se llama Address Sanitizer o
 ASAN. Para usarla compile el programa usando los flags `-fsanitize=address -static-libasan -g`. Corra el
-programa y comente los resultados obtenidos. 
+programa y comente los resultados obtenidos. R/ me muestra los datos que puse, y me dice que hubo un 'heap-use-after-free'.
 
 OJO: Address Sanitizer hace al programa un poco más lento. Típicamente no se usan en producción.
 Y Valgrind es muchísimo más lento y ese nunca se usa en producción.
@@ -350,18 +350,18 @@ Abran el monitor del sistema, de forma que puedan ver el gráfico de
 consumo de memoria. Cuando corran el programa observen cómo crece el
 gráfico de consumo de memoria y luego el de memoria paginada.
 
-Corran el programa. ¿Qué sucede?
+Corran el programa. ¿Qué sucede? R/ según comentado en la clase, se traba toda la computadora.
 
 Revisen la salida del log del sistema usando el comando `less /var/log/syslog` en
-la terminal (presionen g para ir al final). ¿Quién terminó el programa?
+la terminal (presionen g para ir al final). ¿Quién terminó el programa? R/ según comentado en clase, el sistema operativo termina el programa.
 
 Cambie el valor del buffer, por ejemplo a `1024*1024*512`. Vuelva a correr el programa
-¿la memoria sigue subiendo como antes? ¿Porqué?
+¿la memoria sigue subiendo como antes? ¿Porqué? R/ según comentado en clase, la memoria sigue subiendo como antes porque aún hay mucho buffer.
 
 Finalmente, cambie el tamaño del buffer por algo pequeño, como 100. Reduzca el límite
 del for loop a 1000. Compile el programa y ejecútelo sobre strace (`strace step2c`). Con ese
 comando va a observar las llamadas a funciones del sistema, en particular las llamadas
-a `brk` y `mmap`. ¿Observa llamadas a estas llamadas a función cada vez que llama a `malloc`?
+a `brk` y `mmap`. ¿Observa llamadas a estas llamadas a función cada vez que llama a `malloc`? R/ Sí
 
 # Step 3: Buffer Overflow
 Un error típico al programar en C (o usar bibliotecas escritas en C desde C++)
