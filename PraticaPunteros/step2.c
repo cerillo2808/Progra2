@@ -21,7 +21,12 @@ void main() {
 
     printf("Tamaño de s1: %zu\n", sizeof(s1));
     print_student(s1);
+
+    s1 = NULL;
+    
     printf("Tamaño de *s1: %zu\n", sizeof(*s1));
     print_student(s1);
+    
+    printf("%p\n", s1);
 
 }
