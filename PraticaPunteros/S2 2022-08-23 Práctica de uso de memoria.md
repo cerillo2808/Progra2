@@ -312,11 +312,11 @@ Modifiquen `step2b.c` y pongan `free(s1)` entre los dos `print_student` y quiten
 sin valgrind y con valgrind. Comenten qué observan al ejecutar el programa varias veces.
 
 Intenten asignar la edad y la nota de María después de hacer free. ¿El programa corre bien
-después de eso? ¿Porqué? ¿Qué reporta Valgrind?
+después de eso? ¿Porqué? ¿Qué reporta Valgrind? R/ el programa corre, pero no bien. No le hace caso a la edad que le asigné. Esto es porque le caí encima de la memoria, entonces empezó a imprimir cosas que ya están en memoria, y no lo que yo quiero que imprima. Valgrind me reporta que hay invalid reads.
 
 También existe otra herramienta, integrada en los compiladores GCC y Clang que se llama Address Sanitizer o
 ASAN. Para usarla compile el programa usando los flags `-fsanitize=address -static-libasan -g`. Corra el
-programa y comente los resultados obtenidos.
+programa y comente los resultados obtenidos. 
 
 OJO: Address Sanitizer hace al programa un poco más lento. Típicamente no se usan en producción.
 Y Valgrind es muchísimo más lento y ese nunca se usa en producción.
