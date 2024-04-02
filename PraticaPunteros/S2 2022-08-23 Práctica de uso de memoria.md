@@ -245,7 +245,7 @@ bajo valgrind, usando:
 ```
 
 Reporten el resultado que les da Valgrind. Noten las recomendaciones que da el programa. Ejecuten
-Valgrind usando los flags recomendados.
+Valgrind usando los flags recomendados. R/ Dice que tengo 20 bytes en 1 block que aún es reachable.
 
 Valgrind es una herramienta que es capaz de detectar fugas de memoria. Por ejemplo, en step1b
 "se nos olvidó" liberar la memoria. Noten que Valgrind reporta que los bytes perdidos son "still reachable".
