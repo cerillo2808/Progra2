@@ -300,7 +300,7 @@ no necesariamente es limpiada antes de la ejecución de un programa. En C y C++ 
 es importantísimo siempre inicializar la memoria.
 
 Incrementen el 32 por un número alto. ¿En qué dirección les da el segmentation fault? (quiten el
-salto de línea para evitar que tengan muchas líneas en la terminal)
+salto de línea para evitar que tengan muchas líneas en la terminal) R/ 134466: 0x564109Segmentation fault (core dumped)
 
 Vean que en este caso el segmentation fault ocurrió solamente con leer de la memoria, también puede
 ocurrir con escribir o intentar ejecutar de un segmento no ejecutable.
