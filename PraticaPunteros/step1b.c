@@ -23,5 +23,6 @@ void main() {
     print_student(s1);
     printf("Tamaño de *s1: %zu\n", sizeof(*s1));
     print_student(s1);
+    free(s1);
 
 }

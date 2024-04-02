@@ -33,4 +33,5 @@ void main() {
     print_student(s1);
     print_student(&s2);
     call_wrapper(print_student, s1);
+    free(s1);
 }
