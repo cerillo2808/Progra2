@@ -47,7 +47,7 @@ void main() {
 }
 ```
 
-Compile el programa usando `gcc step1.c -o step1` y ejecútelo. ¿Qué imprime?
+Compile el programa usando `gcc step1.c -o step1` y ejecútelo. ¿Qué imprime? R/ La información de Maria.
 
 ## Respondan
 
