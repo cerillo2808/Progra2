@@ -15,14 +15,14 @@ void print_student(const struct student* s) {
 
 void main() {
     struct student* s1 = malloc(sizeof(struct student));
-    s1->age = 20;
+    s1->age = 10;
     s1->score = 100;
     strcpy(s1->name, "Maria");
 
     printf("Tamaño de s1: %zu\n", sizeof(s1));
     print_student(s1);
 
-    s1 = NULL;
+    free(s1);
     
     printf("Tamaño de *s1: %zu\n", sizeof(*s1));
     print_student(s1);
