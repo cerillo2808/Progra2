@@ -372,13 +372,13 @@ Copien el archivo `step1.c` a `step3.c`.
 
 En este curso nadie se llama María (ya revisé en Mediación Virtual). Coloquen
 su nombre completo (con apellidos) en la línea que ejecuta la función `strcpy`
-y compilen el programa. Reporten qué sucede.
+y compilen el programa. Reporten qué sucede. R/ Sí logra compilar.
 
 El compilador es lo suficientemente inteligente para saber que estamos haciendo
 algo mal. Típicamente uno debería ir a arreglar este error, pero no en esta
 práctica.
 
-Ejecuten el programa y reporten qué sucede. ¿De qué forma falló?
+Ejecuten el programa y reporten qué sucede. ¿De qué forma falló? R/ me pone que 'Permission denied'.
 
 Dependiendo del compilador, es posible que haya fallado de formas diferentes
 (o que no fallara). GCC introduce cierta protección contra sobreescritura de
@@ -386,7 +386,7 @@ la pila, conocida como Stack Smashing Protection.
 
 Ahora, vuelvan a compilar el programa, pero esta vez deshabiliten Stack Smashing
 Protection, usando el flag: `-fno-stack-protector`. Corran el programa y reporten
-qué errores observan. ¿Qué edad y qué nota tienen?
+qué errores observan. ¿Qué edad y qué nota tienen? R/ me pone que mi edad es 175073717 y que mi nota es 543649381.
 
 Lo que sucedió es que al hacer la copia de su nombre esta sobreescribió otros
 valores, como la edad y la nota. Pero noten que quizá el programa no falló:
@@ -399,12 +399,12 @@ millones de líneas de código. Protecciones como Stack Smashing Protector ayuda
 a crear código más seguro, ya que este tipo de errores pueden ser usados para tomar
 control de la máquina por parte de un usuario malicioso.
 
-Corran el programa usando Valgrind (`valgrind ./step3`). ¿Qué error reporta?
+Corran el programa usando Valgrind (`valgrind ./step3`). ¿Qué error reporta? R/ conditional jump or move depends on uninitialised values.
 
 Modifiquen el programa para que el nombre mida menos de 20 caracteres (por ejemplo,
 12 caracteres). Compilen y ejecuten el programa con Valgrind. ¿Muestra el mismo
 error al correrlo con Valgrind? ¿Su compilador mostró algún warning esta vez?
-¿Qué edad tienen?
+¿Qué edad tienen? R/ Valgrind ya no me muestra errores y el compilador no mostró ningún warning. Sale en terminal que tengo 20 años.
 
 Como pueden observar, es increiblemente fácil producir un buffer overflow. Y
 este último error no puede ser detectado ni por el compilador ni por herramientas
