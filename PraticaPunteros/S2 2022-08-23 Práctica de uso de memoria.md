@@ -444,8 +444,8 @@ void main() {
 Compílenlo usando `gcc step3a.c -o step3a`. Ejecútenlo e intenten obtener
 credenciales de administrador. Procuren que el programa no falle.
 ¿Con qué nombres no obtuvieron acceso? ¿Con qué nombres sí? ¿Con qué nombres
-hicieron que el programa fallara? ¿Qué opinan de este último ejercicio?
+hicieron que el programa fallara? ¿Qué opinan de este último ejercicio? R/ no lo logré con mi segundo nombre, porque sólo tiene 6 caracteres. Falló con Alejandrinalejandrino, que tiene más de 10 caracteres. Opino que es bastante peligroso que los programas tengan este tipo de vulnerabilidades.
 
-Un programa debe desconfiar de TODAS las entradas externas. Es importante sanitizar los datos que vienen de terceros, no confiar en que tengan el formato esperado y los errores deben ser manejados de forma apropiada (ejm: mostrar un error en lugar de caerse). ¿Qué estrategias pueden tomar para arreglar el programa anterior?
+Un programa debe desconfiar de TODAS las entradas externas. Es importante sanitizar los datos que vienen de terceros, no confiar en que tengan el formato esperado y los errores deben ser manejados de forma apropiada (ejm: mostrar un error en lugar de caerse). ¿Qué estrategias pueden tomar para arreglar el programa anterior? R/ hacer algún if para verificar que la entrada sea de menos de 6 caracteres. Si lo es, entonces proceder, y si no lo es, entonces pedirle al usuario otra entrada o simplemente terminar el programa.
 
-Modifiquen el programa para que use `"%9s"` e intenten volver a obtener acceso de administrador. ¿Lo lograron? ¿porqué sí/no?
+Modifiquen el programa para que use `"%9s"` e intenten volver a obtener acceso de administrador. ¿Lo lograron? ¿porqué sí/no? R/ no lo logré porque sólo me lee 9 caracteres del nombre, entonces incluso cuando le pongo un nombre más largo, sólo me cuenta 9 caracteres.
